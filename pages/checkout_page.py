@@ -25,10 +25,6 @@ class CheckoutPage(BasePage):
     def click_finish(self):
         self.click(self.FINISH_BUTTON)
 
-    def extract_float_from_texted_number(self, element):
-        element_text = self.find(element).text
-        return float(element_text.split('$')[-1])
-
     def get_prices_as_float_and_without_symbols(self):
         return (self.extract_float_from_texted_number(self.ITEM_TOTAL),
                 self.extract_float_from_texted_number(self.TAX),

@@ -17,3 +17,6 @@ class BasePage:
 
     def get_text(self, element):
         return self.find(element).text
+
+    def extract_float_from_texted_number(self, element):
+        return float(self.get_text(element).split('$')[-1])
