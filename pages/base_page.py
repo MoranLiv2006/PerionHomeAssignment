@@ -1,5 +1,5 @@
-from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.support.ui import WebDriverWait
 
 
 class BasePage:
@@ -13,6 +13,7 @@ class BasePage:
         self.find(locator).click()
 
     def enter_text(self, locator, text):
-        element = self.find(locator)
-        element.clear()
-        element.send_keys(text)
+        self.find(locator).send_keys(text)
+
+    def get_text(self, element):
+        return self.find(element).text
