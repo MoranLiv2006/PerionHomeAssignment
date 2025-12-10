@@ -11,7 +11,7 @@ class CartPage(BasePage):
     REMOVE_BUTTONS = (By.CSS_SELECTOR, "button[data-test^='remove-sauce-labs-']")
 
     def navigate_to_cart_page(self):
-        self.driver.get(f"{ApplicationUrl.BASE.value}/{ApplicationUrl.CART.value}")
+        self.driver.get(ApplicationUrl.CART.value)
 
     def click_checkout(self):
         self.click(self.CHECKOUT_BUTTON)
